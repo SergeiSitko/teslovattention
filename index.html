@@ -11,91 +11,312 @@
   <meta name="yandex-verification" content="62d51f3f0e0a17b9" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <title>Инвест-клуб Teslov — личный опыт, потери и вопросы</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #ffffff;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: bold;
+      margin: 0 0 1rem;
+      line-height: 1.3;
+    }
+
+    .hero img {
+      width: 140px;
+      max-width: 90vw;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #ddd;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      color: #333;
+    }
+
+    p {
+      text-align: justify;
+      margin: 0.8rem 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 2rem 0;
+    }
+
+    .card {
+      margin: 1.25rem 0;
+      padding: 1.25rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .card img {
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .card-media {
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    .card-note {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 0;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.45rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e74c3c;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.65rem;
+      top: 0.45rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #e74c3c;
+      border: 2px solid #fff;
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: #666;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    details {
+      margin: 0.75rem 0;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+      font-size: 1.05rem;
+    }
+
+    .contacts {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .disclaimer {
+      font-size: 0.85rem;
+      color: #888;
+      font-style: italic;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .note {
+      font-size: 0.8em;
+      color: #888;
+      font-style: italic;
+    }
+
+    ul {
+      padding-left: 1.4rem;
+    }
+
+    li {
+      margin: 0.4rem 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    footer img {
+      width: 140px;
+      max-width: 90vw;
+      height: auto;
+      opacity: 0.85;
+    }
+  </style>
 </head>
 
-<body
-  style="font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 1rem; line-height: 1.6; color: #222;">
+<body>
   <div style="display:none;">Verification: 62d51f3f0e0a17b9</div>
-  <h1 style="text-align: center; font-size: 2.6em; font-weight: bold;">Инвест-клуб Teslov — личный опыт, потери и
-    вопросы</h1>
-  <div style="text-align: center; margin: 8px 0;">
-    <img src="img/stop.svg" alt="STOP" style="width: 140px; max-width: 90vw; height: auto; display: inline-block;" />
-  </div>
-  <div style="text-align: justify;">
+
+  <div class="container">
+
+    <div class="hero">
+      <div class="badge">Личный опыт · Предупреждение</div>
+      <h1>Инвест-клуб Teslov —<br>личный опыт, потери и вопросы</h1>
+      <img src="img/stop.svg" alt="STOP" />
+    </div>
+
     <p>Привет, меня зовут Сергей, я живу в Минске.</p>
 
     <p>Хочу поделиться своей личной историей участия в сообществе, которое работает под названием инвест-клуб
-      <b>Teslov</b>. Организатор клуба — человек, известный под псевдонимом <b>Teslov</b>, он же <b>Александр</b>.<br>
-      Клуб позиционируется как пространство для обсуждения тем, связанных с инвестициями, финансовыми рынками и личными
-      финансами.
-    </p>
+      <b>Teslov</b>. Организатор клуба — человек, известный под псевдонимом <b>Teslov</b>, он же <b>Александр</b>.
+      Ниже — мой опыт, факты и вопросы, которые до сих пор остаются без ответа.</p>
 
     <hr />
 
-    <h2>📰 Публикации в СМИ</h2>
+    <h2>📰 Контекст</h2>
 
-    <p>У Александра есть публикации в СМИ, где он выступает экспертом по вопросам инвестиций. Ниже приведены некоторые
-      из них.</p>
+    <div class="card">
+      <h3>Кто такой Teslov (Александр)?</h3>
+      <p>Инвест-клуб Teslov позиционируется как пространство для обсуждения тем, связанных с инвестициями,
+        финансовыми рынками и личными финансами. Организатор клуба — человек, известный под псевдонимом
+        <b>Teslov</b> (Александр). У него есть публикации в СМИ, где он выступает экспертом по вопросам инвестиций
+        и криптоиндустрии.</p>
+    </div>
 
-    <div style="margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
-      <h3 style="margin-top: 0; color: #333;">Инвестиции в условиях высоких процентных ставок: какой инструмент и
-        стратегию выбрать</h3>
-      <div style="text-align: center; margin: 15px 0;">
+    <div class="card">
+      <h3>Инвестиции в условиях высоких процентных ставок: какой инструмент и стратегию выбрать</h3>
+      <div class="card-media">
         <img src="https://myfin.by/source/thumb_720_1280/1/KSFufQopwAlAML0pm6lfmdS4uRsHHn8l.jpg"
-          alt="Александр Теслов (Фото из Myfin.by)"
-          style="width: 200px; max-width: 100%; height: auto; border-radius: 8px;">
+          alt="Александр Теслов (Фото из Myfin.by)">
       </div>
-      <p style="margin-bottom: 10px;"><strong>Публикация в СМИ:</strong> <a
+      <p><strong>Публикация в СМИ:</strong> <a
           href="https://myfin.by/article/money/investicii-v-usloviakh-vysokikh-procentnykh-stavok-kakoj-instrument-i-strategiu-vybrat-33507"
-          target="_blank">Myfin.by</a></p>
-      <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">В статье обсуждаются стратегии инвестирования в
-        условиях высоких процентных ставок и выбор подходящих финансовых инструментов.</p>
+          target="_blank" rel="noopener">Myfin.by</a></p>
+      <p class="card-note">В статье обсуждаются стратегии инвестирования в условиях высоких процентных ставок и выбор
+        подходящих финансовых инструментов.</p>
     </div>
 
-    <div style="margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
-      <h3 style="margin-top: 0; color: #333;">Основатель майнинговой компании: Беларусь не находится в авангарде мировой
-        криптоиндустрии</h3>
-      <p style="margin-bottom: 10px;"><strong>Публикация в СМИ:</strong> <a
+    <div class="card">
+      <h3>Основатель майнинговой компании: Беларусь не находится в авангарде мировой криптоиндустрии</h3>
+      <p><strong>Публикация в СМИ:</strong> <a
           href="https://ctv.by/news/obshestvo/osnovatel-majningovoj-kompanii-belarus-ne-nahoditsya-v-avangarde-mirovoj-kriptoindustrii-no-odin-ukaz-i-my-snova-v-igre"
-          target="_blank">CTV.by</a></p>
-      <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">Интервью о состоянии криптоиндустрии в Беларуси и
-        перспективах развития майнинга в стране.</p>
+          target="_blank" rel="noopener">CTV.by</a></p>
+      <p class="card-note">Интервью о состоянии криптоиндустрии в Беларуси и перспективах развития майнинга в стране.</p>
     </div>
 
-    <p style="font-size: 0.8em; color: #888; font-style: italic; margin-top: 20px;">
-      <strong>Примечание:</strong> Фотографии и материалы взяты из открытых публичных источников. Все ссылки ведут на
-      официальные сайты СМИ.
-    </p>
+    <p class="note"><strong>Примечание:</strong> Фотографии и материалы взяты из открытых публичных источников. Все ссылки
+      ведут на официальные сайты СМИ.</p>
 
     <hr />
 
-    <p>Я участвовал в этом сообществе, следил за его активностью и однажды получил предложение вложить деньги в проект,
-      который, по словам организатора, обещал высокий доход и был надежен.<br>
-      Проект был представлен как инвестиционный, с возможностями заработать за счёт торговли или иных финансовых
-      инструментов. Однако никаких документов или официальных подтверждений условий вложений мне предоставлено не было.
-      Всё основывалось на доверии и устных (или переписанных) договорённостях в формате сразу денежные средства, после
-      демонстрация.</p>
+    <h2>📋 Хронология событий</h2>
 
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Участие в клубе</div>
+        <p>Я участвовал в сообществе Teslov, следил за его активностью и общался с организатором. Клуб
+          позиционировался как площадка для обсуждения инвестиций и личных финансов.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Инвестиционное предложение</div>
+        <p>Мне предложили вложить деньги в проект, который, по словам Александра, обещал высокий доход и был надежен.
+          Проект представляли как инвестиционный — с заработком за счёт торговли или иных финансовых инструментов.
+          Документов или официальных подтверждений условий не было.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Финансовые потери</div>
+        <p>Предложение показалось убедительным, и я принял участие. Спустя время стало ясно, что прозрачной отчётности
+          нет, обещанных результатов нет, а объяснения стали неубедительными. В результате я понёс финансовые потери.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Обращение в правоохранительные органы</div>
+        <p>Понимая, что ситуация вызывает вопросы, я обратился в правоохранительные органы, чтобы они провели проверку
+          и дали правовую оценку.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Предложение майнинга</div>
+        <p>Также поступило предложение вложить средства в майнинг — Александр уверял в гарантированном доходе. Я
+          проконсультировался с конкурентами: они утверждали, что на рынке неблагоприятная обстановка и майнинг не
+          выгоден. В итоге я отказался.</p>
+      </div>
+    </div>
 
-    <p>На тот момент предложение показалось мне убедительным, и я решил принять участие. Спустя некоторое время стало
-      ясно, что никакой прозрачной отчётности нет, обещанных результатов нет, а объяснения стали неубедительными.<br>
-      В результате я понёс финансовые потери.</p>
+    <p>Всё основывалось на доверии и устных (или переписанных) договорённостях в формате «сразу денежные средства,
+      после — демонстрация». Никаких документов, никакой прозрачной отчётности.</p>
 
-    <p>Понимая, что ситуация вызывает вопросы, я обратился в правоохранительные органы, чтобы они провели проверку и
-      дали правовую оценку.</p>
-
-    <p>Также поступало предложение вложить средства в майнинг, Алесандр уверял также в гарантированном доходе. Я сделал
-      пару звонков конкурентам, и они утверждали, что на рынке
-      неблагоприятная обстановка и майнинг не выгоден. В итоге я отказался. Повторяюсь, все звучало очень убедительно. С
-      одной стороны Александр, который в рассказе упоминает про суммы сотни тысяч долларов других инвесторов, а с другой
-      стороны здравый смысл и конкуренты в абсолютно противоположным мнением. Но тут кто как умеет ... как говорится.
-    </p>
+    <p>Повторяюсь, всё звучало очень убедительно. С одной стороны — Александр, который в рассказе упоминает суммы
+      сотни тысяч долларов других инвесторов, а с другой — здравый смысл и конкуренты с абсолютно противоположным
+      мнением. Но тут кто как умеет... как говорится.</p>
 
     <hr />
 
     <h2>🔎 Почему я публикую эту информацию</h2>
 
-    <p>Я не обвиняю кого-либо в нарушении закона, и не утверждаю, что действия Teslov были преступными. Всё изложенное —
+    <p>Я не обвиняю кого-либо в нарушении закона и не утверждаю, что действия Teslov были преступными. Всё изложенное —
       это исключительно мой личный опыт и субъективные выводы.</p>
 
     <p>Я публикую этот текст для того чтобы:</p>
@@ -109,9 +330,9 @@
 
     <h2>❓ Часто задаваемые вопросы (FAQ)</h2>
 
-    <details style="margin: 15px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">
-      <summary style="font-weight: bold; color: #333; font-size: 1.1em; padding: 5px; cursor: pointer;">Что такое инвест-клуб Teslov?</summary>
-      <div style="margin-top: 10px; padding-left: 10px;">
+    <details>
+      <summary>Что такое инвест-клуб Teslov?</summary>
+      <div style="margin-top: 0.75rem;">
         <p>Инвест-клуб Teslov — это сообщество, которое позиционируется как пространство для обсуждения тем, связанных с
           инвестициями, финансовыми рынками и личными финансами. Организатор клуба — человек, известный под псевдонимом
           <b>Teslov</b> (Александр). У организатора есть публикации в СМИ, где он выступает экспертом по вопросам
@@ -119,9 +340,9 @@
       </div>
     </details>
 
-    <details style="margin: 15px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">
-      <summary style="font-weight: bold; color: #333; font-size: 1.1em; padding: 5px; cursor: pointer;">Какие предложения вы получали от Teslov?</summary>
-      <div style="margin-top: 10px; padding-left: 10px;">
+    <details>
+      <summary>Какие предложения вы получали от Teslov?</summary>
+      <div style="margin-top: 0.75rem;">
         <p>Я получил два основных предложения:</p>
         <ul>
           <li><b>Инвестиционный проект</b> — предложение вложить деньги в проект, который обещал высокий доход за счёт
@@ -134,26 +355,26 @@
       </div>
     </details>
 
-    <details style="margin: 15px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">
-      <summary style="font-weight: bold; color: #333; font-size: 1.1em; padding: 5px; cursor: pointer;">Предоставлялись ли вам какие-либо документы или официальные подтверждения?</summary>
-      <div style="margin-top: 10px; padding-left: 10px;">
+    <details>
+      <summary>Предоставлялись ли вам какие-либо документы или официальные подтверждения?</summary>
+      <div style="margin-top: 0.75rem;">
         <p>Нет, никаких документов или официальных подтверждений условий вложений мне предоставлено не было. Всё
-          основывалось на доверии и устных (или переписанных) договорённостях в формате "сразу денежные средства, после
-          демонстрация". Прозрачной отчётности о результатах инвестиций также не было.</p>
+          основывалось на доверии и устных (или переписанных) договорённостях в формате «сразу денежные средства, после
+          демонстрация». Прозрачной отчётности о результатах инвестиций также не было.</p>
       </div>
     </details>
 
-    <details style="margin: 15px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">
-      <summary style="font-weight: bold; color: #333; font-size: 1.1em; padding: 5px; cursor: pointer;">Вы обращались в правоохранительные органы?</summary>
-      <div style="margin-top: 10px; padding-left: 10px;">
+    <details>
+      <summary>Вы обращались в правоохранительные органы?</summary>
+      <div style="margin-top: 0.75rem;">
         <p>Да, понимая, что ситуация вызывает вопросы, я обратился в правоохранительные органы, чтобы они провели проверку и
           дали правовую оценку ситуации.</p>
       </div>
     </details>
 
-    <details style="margin: 15px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">
-      <summary style="font-weight: bold; color: #333; font-size: 1.1em; padding: 5px; cursor: pointer;">Как распознать подозрительные инвестиционные предложения?</summary>
-      <div style="margin-top: 10px; padding-left: 10px;">
+    <details>
+      <summary>Как распознать подозрительные инвестиционные предложения?</summary>
+      <div style="margin-top: 0.75rem;">
         <p>Основываясь на своём опыте, рекомендую обратить внимание на следующие признаки:</p>
         <ul>
           <li><b>Отсутствие документов</b> — если вам не предоставляют официальных документов, подтверждающих условия
@@ -172,20 +393,28 @@
     <hr />
 
     <h2>📩 Связь со мной</h2>
-    <p>Если вы сталкивались с подобной ситуацией или участвовали в инвест-клубе Teslov —<br>
-      пожалуйста, свяжитесь со мной. Я открыт для диалога.</p>
-    <p>📱 Telegram: <a href="https://t.me/sergeysanta">@sergeysanta</a><br>
-      📞 Телефон: +375 44 585 21 26</p>
 
-    <hr />
-    <p><strong>⚖️ Юридическая оговорка:</strong><br>
+    <div class="contacts">
+      <p>Если вы сталкивались с подобной ситуацией или участвовали в инвест-клубе Teslov —<br>
+        пожалуйста, свяжитесь со мной. Я открыт для диалога.</p>
+      <p>
+        📱 Telegram: <a href="https://t.me/sergeysanta" target="_blank" rel="noopener">@sergeysanta</a><br>
+        📞 Телефон: +375 44 585 21 26
+      </p>
+    </div>
+
+    <div class="disclaimer">
+      <strong>⚖️ Юридическая оговорка:</strong><br>
       Вся информация на данной странице отражает исключительно личную точку зрения автора. Публикация имеет цель
       установить контакт с другими участниками и поделиться опытом. Здесь не содержится обвинений и не ставится цель
       нанести кому-либо ущерб. Все упомянутые имена и источники являются публичными, и их упоминание не преследует цели
-      дискредитации.</p>
-  </div>
-  <div style="text-align: center; margin: 8px 0;">
-    <img src="img/stop.svg" alt="STOP" style="width: 140px; max-width: 90vw; height: auto; display: inline-block;" />
+      дискредитации.
+    </div>
+
+    <footer>
+      <img src="img/stop.svg" alt="STOP" />
+    </footer>
+
   </div>
 </body>
 
