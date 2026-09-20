@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,8 +9,22 @@
     content="ateslov, teslov, инвестиции, инвестиционный клуб, Минск, bitcoin, crypto, scam, майнинг, обман, криптовалюта, предупреждение, потеря денег, бизнес" />
   <meta name="google-site-verification" content="pB8Rj-ncE4CcEa6arTZ0vi5ZQgAbrX069AEUh1GPydg" />
   <meta name="yandex-verification" content="62d51f3f0e0a17b9" />
+  <meta name="color-scheme" content="light dark" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <title>Инвест-клуб Teslov — личный опыт, потери и вопросы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || saved === "light") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <style>
     *,
     *::before,
@@ -18,202 +32,329 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --bg: #FBF6EE;
+      --ink: #2A1F16;
+      --muted: #6F5E4E;
+      --accent: #A3542F;
+      --line: #E6D8C6;
+      --surface: #FFF9F1;
+      --serif: "Literata", Georgia, "Times New Roman", serif;
+      --sans: "Source Sans 3", system-ui, sans-serif;
+      --measure: 700px;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #1A1511;
+      --ink: #F0E6D8;
+      --muted: #C4B3A1;
+      --accent: #E08A62;
+      --line: #3A3028;
+      --surface: #231C17;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: sans-serif;
-      background: #ffffff;
-      color: #222;
-      line-height: 1.7;
+      min-height: 100%;
+      background:
+        radial-gradient(ellipse 80% 50% at 10% -10%, rgba(163, 84, 47, 0.08), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 100% 0%, rgba(163, 84, 47, 0.05), transparent 45%),
+        var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      line-height: 1.75;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1rem 3rem;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero .badge {
-      display: inline-block;
-      padding: 0.3rem 0.9rem;
-      border: 1px solid #ddd;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      color: #666;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
-      font-weight: bold;
-      margin: 0 0 1rem;
-      line-height: 1.3;
-    }
-
-    .hero img {
-      width: 140px;
-      max-width: 90vw;
-      height: auto;
-    }
-
-    h2 {
-      font-size: 1.35rem;
-      margin: 2rem 0 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 2px solid #ddd;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-      margin-top: 0;
-      color: #333;
-    }
-
-    p {
-      text-align: justify;
-      margin: 0.8rem 0;
+    html[data-theme="dark"] body {
+      background:
+        radial-gradient(ellipse 80% 50% at 10% -10%, rgba(224, 138, 98, 0.1), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 100% 0%, rgba(224, 138, 98, 0.06), transparent 45%),
+        var(--bg);
     }
 
     a {
-      color: inherit;
+      color: var(--accent);
+      text-underline-offset: 0.15em;
     }
 
-    hr {
-      border: none;
-      border-top: 1px solid #ddd;
-      margin: 2rem 0;
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 0;
+    }
+
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .mark-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .mark-name {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+    }
+
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .container {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .hero {
+      padding: 2.2rem 0 1.6rem;
+    }
+
+    .kicker {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 1rem;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 5vw, 2.65rem);
+      line-height: 1.2;
+      margin: 0 0 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lede {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0;
+      max-width: 40rem;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin: 0 0 0.55rem;
+      color: var(--ink);
+    }
+
+    p {
+      margin: 0.85rem 0;
     }
 
     .card {
-      margin: 1.25rem 0;
-      padding: 1.25rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background-color: #f9f9f9;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--accent);
+      border-radius: 16px;
+      padding: 1.2rem 1.25rem;
+      margin: 1rem 0;
     }
 
     .card img {
-      width: 200px;
+      width: 450px;
       max-width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: 12px;
     }
 
     .card-media {
       text-align: center;
-      margin: 15px 0;
+      margin: 0.9rem 0;
     }
 
-    .card-note {
-      font-size: 0.9em;
-      color: #666;
+    .card-note,
+    .note {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--muted);
       margin-bottom: 0;
     }
 
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-      margin: 1.5rem 0;
+    .note {
+      font-style: italic;
+      margin-top: 1rem;
     }
 
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 0.45rem;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: #e74c3c;
+    .timeline {
+      list-style: none;
+      margin: 1.5rem 0;
+      padding: 0;
     }
 
     .timeline-item {
       position: relative;
-      margin-bottom: 1.5rem;
+      padding: 0 0 1.45rem 1.15rem;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
     }
 
     .timeline-item::before {
       content: "";
       position: absolute;
-      left: -1.65rem;
-      top: 0.45rem;
-      width: 10px;
-      height: 10px;
+      left: 0;
+      top: 0.55rem;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: #e74c3c;
-      border: 2px solid #fff;
+      background: var(--accent);
     }
 
     .timeline-date {
-      font-size: 0.8rem;
-      color: #666;
-      font-weight: 600;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .timeline-item p {
+      margin: 0.35rem 0 0;
     }
 
     details {
-      margin: 0.75rem 0;
-      padding: 0.75rem 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background-color: #f9f9f9;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      margin: 0.65rem 0;
     }
 
     summary {
-      font-weight: bold;
+      font-family: var(--serif);
+      font-weight: 600;
       cursor: pointer;
-      color: #333;
-      font-size: 1.05rem;
+      color: var(--ink);
+      font-size: 1.02rem;
+      list-style: none;
     }
 
-    .contacts {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin: 1.5rem 0;
+    summary::-webkit-details-marker {
+      display: none;
     }
 
-    .disclaimer {
-      font-size: 0.85rem;
-      color: #888;
-      font-style: italic;
-      padding: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background-color: #f9f9f9;
+    summary::after {
+      content: "+";
+      float: right;
+      color: var(--accent);
+      font-family: var(--sans);
+      font-weight: 500;
     }
 
-    .note {
-      font-size: 0.8em;
-      color: #888;
-      font-style: italic;
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .details-body {
+      margin-top: 0.75rem;
+      font-size: 0.98rem;
     }
 
     ul {
-      padding-left: 1.4rem;
+      padding-left: 1.35rem;
     }
 
     li {
       margin: 0.4rem 0;
     }
 
+    .contacts {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.4rem;
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .contacts p:last-child {
+      margin-bottom: 0;
+    }
+
+    .disclaimer {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-style: italic;
+      margin: 1.5rem 0;
+      line-height: 1.65;
+    }
+
     footer {
       text-align: center;
       margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
     }
 
-    footer img {
-      width: 140px;
-      max-width: 90vw;
-      height: auto;
-      opacity: 0.85;
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      body,
+      .theme-toggle {
+        transition: none;
+      }
     }
   </style>
 </head>
@@ -221,21 +362,27 @@
 <body>
   <div style="display:none;">Verification: 62d51f3f0e0a17b9</div>
 
-  <div class="container">
-
-    <div class="hero">
-      <div class="badge">Личный опыт · Предупреждение</div>
-      <h1>Инвест-клуб Teslov —<br>личный опыт, потери и вопросы</h1>
-      <img src="img/stop.svg" alt="STOP" />
+  <header class="site-header">
+    <div class="mark">
+      <span class="mark-dot" aria-hidden="true"></span>
+      <span class="mark-name">Личный опыт</span>
     </div>
+    <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Переключить тему">
+      Тёмная тема
+    </button>
+  </header>
 
-    <p>Хочу поделиться личной историей участия в сообществе, которое работает под названием инвест-клуб
-      <b>Teslov</b>. Организатор клуба — человек, известный под псевдонимом <b>Teslov</b>, он же <b>Александр</b>.
-      Ниже — опыт, факты и вопросы, которые до сих пор остаются без ответа.</p>
+  <main class="container">
 
-    <hr />
+    <section class="hero">
+      <p class="kicker">Свидетельство · Предупреждение</p>
+      <h1>Инвест-клуб Teslov — личный опыт, потери и вопросы</h1>
+      <p class="lede">Хочу поделиться личной историей участия в сообществе, которое работает под названием инвест-клуб
+        <b>Teslov</b>. Организатор клуба — человек, известный под псевдонимом <b>Teslov</b>, он же <b>Александр</b>.
+        Ниже — опыт, факты и вопросы, которые до сих пор остаются без ответа.</p>
+    </section>
 
-    <h2>📰 Контекст</h2>
+    <h2>Контекст</h2>
 
     <div class="card">
       <h3>Кто такой Teslov (Александр)?</h3>
@@ -269,39 +416,37 @@
     <p class="note"><strong>Примечание:</strong> Фотографии и материалы взяты из открытых публичных источников. Все ссылки
       ведут на официальные сайты СМИ.</p>
 
-    <hr />
+    <h2>Хронология событий</h2>
 
-    <h2>📋 Хронология событий</h2>
-
-    <div class="timeline">
-      <div class="timeline-item">
+    <ol class="timeline">
+      <li class="timeline-item">
         <div class="timeline-date">Участие в клубе</div>
         <p>Я участвовал в сообществе Teslov, следил за его активностью и общался с организатором. Клуб
           позиционировался как площадка для обсуждения инвестиций и личных финансов.</p>
-      </div>
-      <div class="timeline-item">
+      </li>
+      <li class="timeline-item">
         <div class="timeline-date">Инвестиционное предложение</div>
         <p>Мне предложили вложить деньги в проект, который, по словам Александра, обещал высокий доход и был надежен.
           Проект представляли как инвестиционный — с заработком за счёт торговли или иных финансовых инструментов.
           Документов или официальных подтверждений условий не было.</p>
-      </div>
-      <div class="timeline-item">
+      </li>
+      <li class="timeline-item">
         <div class="timeline-date">Финансовые потери</div>
         <p>Предложение показалось убедительным, и я принял участие. Спустя время стало ясно, что прозрачной отчётности
           нет, обещанных результатов нет, а объяснения стали неубедительными. В результате я понёс финансовые потери.</p>
-      </div>
-      <div class="timeline-item">
+      </li>
+      <li class="timeline-item">
         <div class="timeline-date">Обращение в правоохранительные органы</div>
         <p>Понимая, что ситуация вызывает вопросы, я обратился в правоохранительные органы, чтобы они провели проверку
           и дали правовую оценку.</p>
-      </div>
-      <div class="timeline-item">
+      </li>
+      <li class="timeline-item">
         <div class="timeline-date">Предложение майнинга</div>
         <p>Также поступило предложение вложить средства в майнинг — Александр уверял в гарантированном доходе. Я
           проконсультировался с конкурентами: они утверждали, что на рынке неблагоприятная обстановка и майнинг не
           выгоден. В итоге я отказался.</p>
-      </div>
-    </div>
+      </li>
+    </ol>
 
     <p>Всё основывалось на доверии и устных (или переписанных) договорённостях в формате «сразу денежные средства,
       после — демонстрация». Никаких документов, никакой прозрачной отчётности.</p>
@@ -310,9 +455,7 @@
       сотни тысяч долларов других инвесторов, а с другой — здравый смысл и конкуренты с абсолютно противоположным
       мнением. Но тут кто как умеет... как говорится.</p>
 
-    <hr />
-
-    <h2>🔎 Почему я публикую эту информацию</h2>
+    <h2>Почему я публикую эту информацию</h2>
 
     <p>Я не обвиняю кого-либо в нарушении закона и не утверждаю, что действия Teslov были преступными. Всё изложенное —
       это исключительно мой личный опыт и субъективные выводы.</p>
@@ -324,13 +467,11 @@
       <li><b>понять</b>, была ли моя ситуация исключением или частью общей практики.</li>
     </ul>
 
-    <hr />
-
-    <h2>❓ Часто задаваемые вопросы (FAQ)</h2>
+    <h2>Частые вопросы</h2>
 
     <details>
       <summary>Что такое инвест-клуб Teslov?</summary>
-      <div style="margin-top: 0.75rem;">
+      <div class="details-body">
         <p>Инвест-клуб Teslov — это сообщество, которое позиционируется как пространство для обсуждения тем, связанных с
           инвестициями, финансовыми рынками и личными финансами. Организатор клуба — человек, известный под псевдонимом
           <b>Teslov</b> (Александр). У организатора есть публикации в СМИ, где он выступает экспертом по вопросам
@@ -340,7 +481,7 @@
 
     <details>
       <summary>Какие предложения вы получали от Teslov?</summary>
-      <div style="margin-top: 0.75rem;">
+      <div class="details-body">
         <p>Я получил два основных предложения:</p>
         <ul>
           <li><b>Инвестиционный проект</b> — предложение вложить деньги в проект, который обещал высокий доход за счёт
@@ -355,7 +496,7 @@
 
     <details>
       <summary>Предоставлялись ли вам какие-либо документы или официальные подтверждения?</summary>
-      <div style="margin-top: 0.75rem;">
+      <div class="details-body">
         <p>Нет, никаких документов или официальных подтверждений условий вложений мне предоставлено не было. Всё
           основывалось на доверии и устных (или переписанных) договорённостях в формате «сразу денежные средства, после
           демонстрация». Прозрачной отчётности о результатах инвестиций также не было.</p>
@@ -364,7 +505,7 @@
 
     <details>
       <summary>Вы обращались в правоохранительные органы?</summary>
-      <div style="margin-top: 0.75rem;">
+      <div class="details-body">
         <p>Да, понимая, что ситуация вызывает вопросы, я обратился в правоохранительные органы, чтобы они провели проверку и
           дали правовую оценку ситуации.</p>
       </div>
@@ -372,7 +513,7 @@
 
     <details>
       <summary>Как распознать подозрительные инвестиционные предложения?</summary>
-      <div style="margin-top: 0.75rem;">
+      <div class="details-body">
         <p>Основываясь на своём опыте, рекомендую обратить внимание на следующие признаки:</p>
         <ul>
           <li><b>Отсутствие документов</b> — если вам не предоставляют официальных документов, подтверждающих условия
@@ -388,20 +529,18 @@
       </div>
     </details>
 
-    <hr />
-
-    <h2>📩 Связь со мной</h2>
+    <h2>Связь со мной</h2>
 
     <div class="contacts">
       <p>Если вы сталкивались с подобной ситуацией или участвовали в инвест-клубе Teslov —<br>
         напишите в Telegram. Я открыт для диалога.</p>
       <p>
-        📱 Telegram: <a href="https://t.me/makemitos" target="_blank" rel="noopener">@makemitos</a>
+        Telegram: <a href="https://t.me/makemitos" target="_blank" rel="noopener">@makemitos</a>
       </p>
     </div>
 
     <div class="disclaimer">
-      <strong>⚖️ Юридическая оговорка:</strong><br>
+      <strong>Юридическая оговорка.</strong>
       Вся информация на данной странице отражает исключительно личную точку зрения автора. Публикация имеет цель
       установить контакт с другими участниками и поделиться опытом. Здесь не содержится обвинений и не ставится цель
       нанести кому-либо ущерб. Все упомянутые имена и источники являются публичными, и их упоминание не преследует цели
@@ -409,10 +548,36 @@
     </div>
 
     <footer>
-      <img src="img/stop.svg" alt="STOP" />
+      Личный опыт · Teslov
     </footer>
 
-  </div>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById("theme-toggle");
+
+      function label(theme) {
+        return theme === "dark" ? "Светлая тема" : "Тёмная тема";
+      }
+
+      function apply(theme) {
+        root.setAttribute("data-theme", theme);
+        btn.textContent = label(theme);
+        btn.setAttribute("aria-label", theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему");
+        try {
+          localStorage.setItem("theme", theme);
+        } catch (e) {}
+      }
+
+      apply(root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+
+      btn.addEventListener("click", function () {
+        apply(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      });
+    })();
+  </script>
 </body>
 
 </html>
